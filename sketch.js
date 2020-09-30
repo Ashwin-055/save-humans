@@ -1,4 +1,4 @@
-var helicopterIMG, helicopterSprite, packageSprite,packageIMG, packOptions;
+var helicopterIMG, helicopterSprite, packageSprite,packageIMG, packOption,planeSound;
 var packageBody,ground
 const Engine = Matter.Engine;
 const World = Matter.World;
@@ -8,7 +8,7 @@ function preload()
 {
 	helicopterIMG=loadImage("helicopter.gif");
 	packageIMG=loadImage("package.png");
-	Psound=loadSound("helicopter.mp3");
+	planeSound=loadSound("helicopter.mp3");
 }
 
 function setup() {
@@ -20,7 +20,8 @@ function setup() {
           isStatic:true,
           friction:0
         }
-	        
+	
+	planeSound.loop();
         packageSprite=createSprite(width/2, 200, 10,10);	
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.15
@@ -51,9 +52,6 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-  if(Psound.stop()){
-     Psound.start();
-  }
   Engine.update(engine);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
