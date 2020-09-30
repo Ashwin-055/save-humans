@@ -8,7 +8,7 @@ function preload()
 {
 	helicopterIMG=loadImage("helicopter.gif");
 	packageIMG=loadImage("package.png");
-	PSound=loadSound("helicopter.mp3");
+	Psound=loadSound("helicopter.mp3");
 }
 
 function setup() {
@@ -20,9 +20,7 @@ function setup() {
           isStatic:true,
           friction:0
         }
-	
- 	PSound.loop(); 
-        
+	        
         packageSprite=createSprite(width/2, 200, 10,10);	
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.15
@@ -53,6 +51,9 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
+  if(Psound.stop()){
+     Psound.start();
+  }
   Engine.update(engine);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
