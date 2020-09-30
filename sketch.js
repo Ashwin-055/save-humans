@@ -6,9 +6,9 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 function preload()
 {
-	helicopterIMG=loadImage("helicopter.gif")
-	packageIMG=loadImage("package.png")
-	PSound=loadSound("helicopter.mp3")
+	helicopterIMG=loadImage("helicopter.gif");
+	packageIMG=loadImage("package.png");
+	PSound=loadSound("helicopter.mp3");
 }
 
 function setup() {
@@ -20,6 +20,8 @@ function setup() {
           isStatic:true,
           friction:0
         }
+	
+ 	PSound.loop(); 
         
         packageSprite=createSprite(width/2, 200, 10,10);	
 	packageSprite.addImage(packageIMG)
@@ -45,8 +47,6 @@ function setup() {
  	World.add(world, ground);
 
 	Engine.run(engine);
-	
- 	PSound.loop(); 
 }
 
 
