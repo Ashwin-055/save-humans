@@ -21,7 +21,7 @@ function setup() {
           friction:0
         }
 	
-	planeSound.looop();
+	planeSound.setLoop=true;
         packageSprite=createSprite(width/2, 200, 10,10);	
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.15
