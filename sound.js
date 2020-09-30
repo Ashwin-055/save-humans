@@ -3630,7 +3630,7 @@
             this._pauseTime = this.currentTime()) : this._pauseTime = 0
         }
         ,
-        p5.SoundFile.prototype.loooop = function(t, e, n, i, o) {
+        p5.SoundFile.prototype.looop = function(t, e, n, i, o) {
             this._looping = !0,
             this.play(t, e, n, i, o)
         }
